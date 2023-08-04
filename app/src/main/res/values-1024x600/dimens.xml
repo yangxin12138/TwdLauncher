@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Index-->
+    <!--left area-->
+    <dimen name="tvTime_textSize">80sp</dimen>
+    <dimen name="tvTime_height">90dp</dimen>
+    <dimen name="tvDay_textSize">40sp</dimen>
+    <dimen name="tvDay_height">60dp</dimen>
+    <dimen name="btHdmi_width_height">200dp</dimen>
+    <dimen name="btHdmi_marginStart">100dp</dimen>
+    <dimen name="btHdmi_marginTop">50dp</dimen>
+    <dimen name="btSetting_width_height">200dp</dimen>
+    <dimen name="btSetting_marginStart">100dp</dimen>
+    <dimen name="btSetting_marginTop">50dp</dimen>
+    <!--right area-->
+    <dimen name="btAndroidCast_width">320dp</dimen>
+    <dimen name="btAndroidCast_height">80dp</dimen>
+    <dimen name="btAndroidCast_marginStart">50dp</dimen>
+    <dimen name="btAndroidCast_marginTop">50dp</dimen>
+    <dimen name="btAirdrop_width">320dp</dimen>
+    <dimen name="btAirdrop_height">80dp</dimen>
+    <dimen name="btAirdrop_marginStart">50dp</dimen>
+    <dimen name="btAirdrop_marginTop">50dp</dimen>
+    <dimen name="btVideo_width">320dp</dimen>
+    <dimen name="btVideo_height">200dp</dimen>
+    <dimen name="btVideo_marginStart">50dp</dimen>
+    <dimen name="btVideo_marginTop">50dp</dimen>
+    <dimen name="btMusic_width">320dp</dimen>
+    <dimen name="btMusic_height">200dp</dimen>
+    <dimen name="btMusic_marginStart">50dp</dimen>
+    <dimen name="btMusic_marginTop">50dp</dimen>
+    <dimen name="btPic_width">320dp</dimen>
+    <dimen name="btPic_height">200dp</dimen>
+    <dimen name="btPic_marginStart">50dp</dimen>
+    <dimen name="btPic_marginTop">50dp</dimen>
+    <dimen name="btOffice_width">320dp</dimen>
+    <dimen name="btOffice_height">200dp</dimen>
+    <dimen name="btOffice_marginStart">50dp</dimen>
+    <dimen name="btOffice_marginTop">50dp</dimen>
+</resources>
