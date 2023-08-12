@@ -44,7 +44,7 @@
     <dimen name="btDlan_marginBottom">20dp</dimen>
     <dimen name="btWired_width">250dp</dimen>
     <dimen name="btWired_height">180dp</dimen>
-    <dimen name="btWired_marginStart">50dp</dimen>
+    <dimen name="btWired_marginStart">20dp</dimen>
     <dimen name="btWired_marginTop">20dp</dimen>
     <dimen name="btWired_marginBottom">20dp</dimen>
 </resources>
