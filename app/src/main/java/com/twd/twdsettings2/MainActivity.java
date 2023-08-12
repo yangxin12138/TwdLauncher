@@ -7,8 +7,11 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -27,6 +30,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, View.OnFocusChangeListener {
 
@@ -41,6 +45,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageButton bt_music;
     private ImageButton bt_pic;
     private ImageButton bt_office;
+
+    private ImageButton bt_dlan;
+
+    private ImageButton bt_wired;
     private ImageView im_usb;
 
     private Handler timeHandler = new Handler();
@@ -66,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String formattedDate = dateFormat.format(currentDate);
 
             //设置时间的格式
-            DateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
+            DateFormat timeFormat = new SimpleDateFormat("HH:mm");
             String formattedTime = timeFormat.format(currentDate);
 
             //在TextView上更新日期和时间
@@ -96,6 +104,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bt_music = findViewById(R.id.imButton_music);
         bt_pic = findViewById(R.id.imButton_pic);
         bt_office = findViewById(R.id.imButton_office);
+        bt_dlan = findViewById(R.id.im_dlan);
+        bt_wired = findViewById(R.id.im_wired);
         im_usb = findViewById(R.id.im_usb);
 
         bt_hdmi.setFocusable(true);
@@ -114,6 +124,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bt_pic.setFocusableInTouchMode(true);
         bt_office.setFocusable(true);
         bt_office.setFocusableInTouchMode(true);
+        bt_dlan.setFocusable(true);
+        bt_dlan.setFocusableInTouchMode(true);
+        bt_wired.setFocusable(true);
+        bt_wired.setFocusableInTouchMode(true);
 
         bt_hdmi.setOnFocusChangeListener(this);
         bt_setting.setOnFocusChangeListener(this);
@@ -123,6 +137,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bt_music.setOnFocusChangeListener(this);
         bt_pic.setOnFocusChangeListener(this);
         bt_office.setOnFocusChangeListener(this);
+        bt_dlan.setOnFocusChangeListener(this);
+        bt_wired.setOnFocusChangeListener(this);
 
         bt_hdmi.setOnClickListener(this);
         bt_setting.setOnClickListener(this);
@@ -132,6 +148,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bt_music.setOnClickListener(this);
         bt_pic.setOnClickListener(this);
         bt_office.setOnClickListener(this);
+        bt_dlan.setOnClickListener(this);
+        bt_wired.setOnClickListener(this);
 
         //获取UsbManager的实例
         UsbManager usbManager = (UsbManager) getSystemService(Context.USB_SERVICE);
@@ -167,6 +185,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (v.getId() == R.id.imButton_office) {
             Toast.makeText(this, "点击office", Toast.LENGTH_SHORT).show();
             Log.i(TAG, "--------------onClick:  bt_office");
+        } else if (v.getId() == R.id.im_dlan) {
+            Toast.makeText(this, "点击dlan", Toast.LENGTH_SHORT).show();
+            Log.i(TAG, "--------------onClick:  bt_dlan");
+        } else if (v.getId() == R.id.im_wired) {
+            Toast.makeText(this, "点击wired", Toast.LENGTH_SHORT).show();
+            Log.i(TAG, "--------------onClick:  bt_wired");
         }
     }
     @Override

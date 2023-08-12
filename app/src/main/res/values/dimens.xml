@@ -2,8 +2,8 @@
 <resources>
     <!--Index-->
     <!--left area-->
-    <dimen name="tvTime_textSize">40sp</dimen>
-    <dimen name="tvTime_height">50dp</dimen>
+    <dimen name="tvTime_textSize">50sp</dimen>
+    <dimen name="tvTime_height">60dp</dimen>
     <dimen name="tvDay_textSize">20sp</dimen>
     <dimen name="tvDay_height">50dp</dimen>
     <dimen name="btHdmi_width_height">150dp</dimen>
@@ -14,13 +14,13 @@
     <dimen name="btSetting_marginTop">20dp</dimen>
     <!--right area-->
     <dimen name="btAndroidCast_width">250dp</dimen>
-    <dimen name="btAndroidCast_height">60dp</dimen>
+    <dimen name="btAndroidCast_height">180dp</dimen>
     <dimen name="btAndroidCast_marginStart">50dp</dimen>
     <dimen name="btAndroidCast_marginTop">20dp</dimen>
-    <dimen name="btAirdrop_width">250dp</dimen>
-    <dimen name="btAirdrop_height">60dp</dimen>
-    <dimen name="btAirdrop_marginStart">20dp</dimen>
-    <dimen name="btAirdrop_marginTop">20dp</dimen>
+    <dimen name="btAirplay_width">250dp</dimen>
+    <dimen name="btAirplay_height">180dp</dimen>
+    <dimen name="btAirplay_marginStart">20dp</dimen>
+    <dimen name="btAirplay_marginTop">20dp</dimen>
     <dimen name="btVideo_width">250dp</dimen>
     <dimen name="btVideo_height">180dp</dimen>
     <dimen name="btVideo_marginStart">50dp</dimen>
@@ -37,4 +37,14 @@
     <dimen name="btOffice_height">180dp</dimen>
     <dimen name="btOffice_marginStart">20dp</dimen>
     <dimen name="btOffice_marginTop">20dp</dimen>
+    <dimen name="btDlan_width">250dp</dimen>
+    <dimen name="btDlan_height">180dp</dimen>
+    <dimen name="btDlan_marginStart">50dp</dimen>
+    <dimen name="btDlan_marginTop">20dp</dimen>
+    <dimen name="btDlan_marginBottom">20dp</dimen>
+    <dimen name="btWired_width">250dp</dimen>
+    <dimen name="btWired_height">180dp</dimen>
+    <dimen name="btWired_marginStart">50dp</dimen>
+    <dimen name="btWired_marginTop">20dp</dimen>
+    <dimen name="btWired_marginBottom">20dp</dimen>
 </resources>

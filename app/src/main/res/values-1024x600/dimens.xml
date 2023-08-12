@@ -14,13 +14,13 @@
     <dimen name="btSetting_marginTop">50dp</dimen>
     <!--right area-->
     <dimen name="btAndroidCast_width">320dp</dimen>
-    <dimen name="btAndroidCast_height">80dp</dimen>
+    <dimen name="btAndroidCast_height">200dp</dimen>
     <dimen name="btAndroidCast_marginStart">50dp</dimen>
     <dimen name="btAndroidCast_marginTop">50dp</dimen>
-    <dimen name="btAirdrop_width">320dp</dimen>
-    <dimen name="btAirdrop_height">80dp</dimen>
-    <dimen name="btAirdrop_marginStart">50dp</dimen>
-    <dimen name="btAirdrop_marginTop">50dp</dimen>
+    <dimen name="btAirplay_width">320dp</dimen>
+    <dimen name="btAirplay_height">200dp</dimen>
+    <dimen name="btAirplay_marginStart">50dp</dimen>
+    <dimen name="btAirplay_marginTop">50dp</dimen>
     <dimen name="btVideo_width">320dp</dimen>
     <dimen name="btVideo_height">200dp</dimen>
     <dimen name="btVideo_marginStart">50dp</dimen>
@@ -37,4 +37,14 @@
     <dimen name="btOffice_height">200dp</dimen>
     <dimen name="btOffice_marginStart">50dp</dimen>
     <dimen name="btOffice_marginTop">50dp</dimen>
+    <dimen name="btDlan_width">320dp</dimen>
+    <dimen name="btDlan_height">200dp</dimen>
+    <dimen name="btDlan_marginStart">50dp</dimen>
+    <dimen name="btDlan_marginTop">50dp</dimen>
+    <dimen name="btDlan_marginBottom">50dp</dimen>
+    <dimen name="btWired_width">320dp</dimen>
+    <dimen name="btWired_height">200dp</dimen>
+    <dimen name="btWired_marginStart">50dp</dimen>
+    <dimen name="btWired_marginTop">50dp</dimen>
+    <dimen name="btWired_marginBottom">50dp</dimen>
 </resources>
