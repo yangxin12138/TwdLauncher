@@ -1,4 +1,4 @@
-package com.twd.twdsettings2;
+package com.twd.launcher;
 
 import org.junit.Test;
 
