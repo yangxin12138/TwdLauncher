@@ -32,19 +32,19 @@
     <dimen name="btPic_width">320dp</dimen>
     <dimen name="btPic_height">200dp</dimen>
     <dimen name="btPic_marginStart">50dp</dimen>
-    <dimen name="btPic_marginTop">50dp</dimen>
+    <dimen name="btPic_marginTop">20dp</dimen>
     <dimen name="btOffice_width">320dp</dimen>
     <dimen name="btOffice_height">200dp</dimen>
     <dimen name="btOffice_marginStart">50dp</dimen>
-    <dimen name="btOffice_marginTop">50dp</dimen>
+    <dimen name="btOffice_marginTop">20dp</dimen>
     <dimen name="btDlan_width">320dp</dimen>
     <dimen name="btDlan_height">200dp</dimen>
     <dimen name="btDlan_marginStart">50dp</dimen>
-    <dimen name="btDlan_marginTop">50dp</dimen>
-    <dimen name="btDlan_marginBottom">50dp</dimen>
+    <dimen name="btDlan_marginTop">20dp</dimen>
+    <dimen name="btDlan_marginBottom">20dp</dimen>
     <dimen name="btWired_width">320dp</dimen>
     <dimen name="btWired_height">200dp</dimen>
     <dimen name="btWired_marginStart">50dp</dimen>
-    <dimen name="btWired_marginTop">50dp</dimen>
+    <dimen name="btWired_marginTop">20dp</dimen>
     <dimen name="btWired_marginBottom">50dp</dimen>
 </resources>

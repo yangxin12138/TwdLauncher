@@ -4,7 +4,7 @@
     <!--left area-->
     <dimen name="tvTime_textSize">50sp</dimen>
     <dimen name="tvTime_height">60dp</dimen>
-    <dimen name="tvDay_textSize">20sp</dimen>
+    <dimen name="tvDay_textSize">25sp</dimen>
     <dimen name="tvDay_height">50dp</dimen>
     <dimen name="btHdmi_width_height">150dp</dimen>
     <dimen name="btHdmi_marginStart">80dp</dimen>
@@ -28,23 +28,23 @@
     <dimen name="btMusic_width">250dp</dimen>
     <dimen name="btMusic_height">180dp</dimen>
     <dimen name="btMusic_marginStart">50dp</dimen>
-    <dimen name="btMusic_marginTop">20dp</dimen>
+    <dimen name="btMusic_marginTop">30dp</dimen>
     <dimen name="btPic_width">250dp</dimen>
     <dimen name="btPic_height">180dp</dimen>
-    <dimen name="btPic_marginStart">20dp</dimen>
+    <dimen name="btPic_marginStart">50dp</dimen>
     <dimen name="btPic_marginTop">30dp</dimen>
     <dimen name="btOffice_width">250dp</dimen>
     <dimen name="btOffice_height">180dp</dimen>
-    <dimen name="btOffice_marginStart">20dp</dimen>
-    <dimen name="btOffice_marginTop">20dp</dimen>
+    <dimen name="btOffice_marginStart">50dp</dimen>
+    <dimen name="btOffice_marginTop">30dp</dimen>
     <dimen name="btDlan_width">250dp</dimen>
     <dimen name="btDlan_height">180dp</dimen>
     <dimen name="btDlan_marginStart">50dp</dimen>
-    <dimen name="btDlan_marginTop">20dp</dimen>
+    <dimen name="btDlan_marginTop">30dp</dimen>
     <dimen name="btDlan_marginBottom">20dp</dimen>
     <dimen name="btWired_width">250dp</dimen>
     <dimen name="btWired_height">180dp</dimen>
-    <dimen name="btWired_marginStart">20dp</dimen>
-    <dimen name="btWired_marginTop">20dp</dimen>
+    <dimen name="btWired_marginStart">50dp</dimen>
+    <dimen name="btWired_marginTop">30dp</dimen>
     <dimen name="btWired_marginBottom">20dp</dimen>
 </resources>
