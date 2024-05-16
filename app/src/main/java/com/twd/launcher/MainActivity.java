@@ -5,6 +5,7 @@ import androidx.core.view.ViewCompat;
 
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -14,6 +15,7 @@ import android.hardware.usb.UsbManager;
 import android.media.AudioManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
@@ -42,6 +44,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView im_wifi;
     private ImageView im_headset;
 
+    private ImageView im_cast;
+    private ImageView im_file;
+    private ImageView im_hdmi;
+    private ImageView im_setting;
+
     private Handler timeHandler = new Handler();
     private boolean hasNetworkConnection ;
     SharedPreferences sharedPreferences;
@@ -55,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         sharedPreferences = getSharedPreferences("NetworkConnected",Context.MODE_PRIVATE);
         hasNetworkConnection = sharedPreferences.getBoolean("hasNetworkConnection",false);
         updateTimeRunnable.run();
+
     }
 
     private Runnable updateTimeRunnable = new Runnable() {
@@ -146,50 +154,79 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         im_usb.setVisibility(usbIsConnect() ? View.VISIBLE : View.GONE);
         im_headset.setVisibility(headsetIsWired() ? View.VISIBLE : View.GONE);
-        /*IntentFilter filter = new IntentFilter();
-        filter.addAction(UsbManager.ACTION_USB_DEVICE_ATTACHED);
-        filter.addAction(UsbManager.ACTION_USB_DEVICE_DETACHED);
-        registerReceiver(usbDeviceReceiver,filter);*/
+
+        im_cast = findViewById(R.id.im_cast);
+        im_hdmi = findViewById(R.id.im_hdmi);
+        im_file = findViewById(R.id.im_file);
+        im_setting = findViewById(R.id.im_setting);
+
+        im_cast.requestFocus();
+        im_file.setBackgroundResource(0);
+        im_hdmi.setBackgroundResource(0);
+        im_setting.setBackgroundResource(0);
+        im_cast.setOnFocusChangeListener(this::onFocusChange);
+        im_hdmi.setOnFocusChangeListener(this::onFocusChange);
+        im_file.setOnFocusChangeListener(this::onFocusChange);
+        im_setting.setOnFocusChangeListener(this::onFocusChange);
+
+        im_cast.setOnClickListener(this::onClick);
+        im_hdmi.setOnClickListener(this::onClick);
+        im_file.setOnClickListener(this::onClick);
+        im_setting.setOnClickListener(this::onClick);
     }
 
     @Override
     public void onClick(View v) {
+        Intent intent = new Intent();
+        if (v.getId() == R.id.im_cast){
+            Log.i(TAG, "onClick: ---cast---");
+            //intent.setComponent(new ComponentName("com.android.toofifi","com.android.toofifi.ui.activity.MainActivity"));
+        } else if (v.getId() == R.id.im_file) {
+            Log.i(TAG, "onClick: ---file---");
+            //intent.setComponent(new ComponentName("com.softwinner.miracastReceiver","com.softwinner.miracastReceiver.Miracast"));
+        } else if (v.getId() == R.id.im_hdmi) {
+            Log.i(TAG, "onClick: ---hdmi---");
+            //intent.setComponent(new ComponentName("com.allwinnertech.platinum.media","com.allwinnertech.platinum.media.activity.SettingsActivity"));
+        } else if (v.getId() == R.id.im_setting) {
+            Log.i(TAG, "onClick: ---setting---");
+            //intent.setComponent(new ComponentName("com.allwinnertech.platinum.media","com.allwinnertech.platinum.media.activity.SettingsActivity"));
+        }
+
+        // 启动应用程序
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            Log.e(TAG, "No app found to handle the intent");
+        }
     }
     @Override
     public void onFocusChange(View view, boolean hasFocus) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
         if (hasFocus) {
-            // 此处为得到焦点时的处理内容
-            ViewCompat.animate(view)
-                    .scaleX(1.10f)
-                    .scaleY(1.10f)
-                    .translationZ(1)
-                    .start();
-
-        } else {
-            // 此处为失去焦点时的处理内容
-            ViewCompat.animate(view)
-                    .scaleX(1)
-                    .scaleY(1)
-                    .translationZ(1)
-                    .start();
-        }
-    }
-
-    private BroadcastReceiver usbDeviceReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
-            if (UsbManager.ACTION_USB_DEVICE_ATTACHED.equals(action)){
-                //执行相应的逻辑
-                im_usb.setImageResource(R.drawable.icon_usb);
-                Toast.makeText(context, "-----插入------", Toast.LENGTH_SHORT).show();
-            } else if (UsbManager.ACTION_USB_DEVICE_DETACHED.equals(action)) {
-                //执行相应的逻辑
-                im_usb.setImageDrawable(null);
-                Toast.makeText(context, "-----拔出------", Toast.LENGTH_SHORT).show();
+                if (view.getId() == R.id.im_cast){
+                    im_cast.setForeground(getDrawable(R.drawable.border_black));
+                } else if (view.getId() == R.id.im_file) {
+                    im_file.setForeground(getDrawable(R.drawable.border_black));
+                } else if (view.getId() == R.id.im_hdmi) {
+                    im_hdmi.setForeground(getDrawable(R.drawable.border_black));
+                } else if (view.getId() == R.id.im_setting) {
+                    im_setting.setForeground(getDrawable(R.drawable.border_black));
+                }
+            } else {
+                if (view.getId() == R.id.im_cast){
+                    im_cast.setForeground(null);
+                } else if (view.getId() == R.id.im_file) {
+                    im_file.setForeground(null);
+                } else if (view.getId() == R.id.im_hdmi) {
+                    im_hdmi.setForeground(null);
+                } else if (view.getId() == R.id.im_setting) {
+                    im_setting.setForeground(null);
+                }
             }
         }
-    };
+
+    }
+
 
     private BroadcastReceiver customReceiver = new BroadcastReceiver() {
         @Override
@@ -203,11 +240,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         if (networkInfo != null && networkInfo.isConnected()) {
                             // Network connected
                             Log.d("BroadcastReceiver", "网络连接");
-                            im_wifi.setVisibility(View.VISIBLE);
+                            im_wifi.setImageResource(R.drawable.icon_wifi);
                         } else {
                             // Network disconnected
                             Log.d("BroadcastReceiver", "网络未连接");
-                            im_wifi.setVisibility(View.GONE);
+                            im_wifi.setImageResource(R.drawable.icon_wifi_no);
                         }
                         break;
                     case UsbManager.ACTION_USB_DEVICE_ATTACHED:
@@ -226,12 +263,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         int state = intent.getIntExtra("state", -1);
                         if (state == 0) {
                             // Headset unplugged
-                            Log.d("BroadcastReceiver", "耳机插入");
-                            im_headset.setVisibility(View.VISIBLE);
-                        } else if (state == 1) {
-                            // Headset plugged in
                             Log.d("BroadcastReceiver", "耳机拔出");
                             im_headset.setVisibility(View.GONE);
+                        } else if (state == 1) {
+                            // Headset plugged in
+                            Log.d("BroadcastReceiver", "耳机插入");
+                            im_headset.setVisibility(View.VISIBLE);
                         }
                         break;
                 }
