@@ -21,6 +21,16 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            applicationVariants.all { variant ->
+                variant.outputs.all {
+                    def systemTime = new Date().format("yyyyMMdd_HHmmss", TimeZone.getTimeZone("UTC"))
+                    outputFileName = "${rootProject.name}_v${variant.versionName}_${systemTime}.apk"
+                }
+            }
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

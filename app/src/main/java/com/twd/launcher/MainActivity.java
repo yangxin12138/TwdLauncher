@@ -180,16 +180,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent();
         if (v.getId() == R.id.im_cast){
             Log.i(TAG, "onClick: ---cast---");
-            //intent.setComponent(new ComponentName("com.android.toofifi","com.android.toofifi.ui.activity.MainActivity"));
+            intent.setComponent(new ComponentName("com.android.toofifi","com.android.toofifi.ui.activity.MainActivity"));
         } else if (v.getId() == R.id.im_file) {
             Log.i(TAG, "onClick: ---file---");
-            //intent.setComponent(new ComponentName("com.softwinner.miracastReceiver","com.softwinner.miracastReceiver.Miracast"));
+            intent.setComponent(new ComponentName("com.vsoontech.mos.filemanager", "com.vsoontech.filemanager.business.index.IndexAty"));
         } else if (v.getId() == R.id.im_hdmi) {
             Log.i(TAG, "onClick: ---hdmi---");
-            //intent.setComponent(new ComponentName("com.allwinnertech.platinum.media","com.allwinnertech.platinum.media.activity.SettingsActivity"));
+            intent.setComponent(new ComponentName("com.twd.twdcamera","com.twd.twdcamera.MainActivity"));
         } else if (v.getId() == R.id.im_setting) {
             Log.i(TAG, "onClick: ---setting---");
-            //intent.setComponent(new ComponentName("com.allwinnertech.platinum.media","com.allwinnertech.platinum.media.activity.SettingsActivity"));
+            intent.setComponent(new ComponentName("com.twd.setting","com.twd.setting.MainActivity"));
         }
 
         // 启动应用程序
